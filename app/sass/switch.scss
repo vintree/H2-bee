@@ -1,0 +1,36 @@
+@import './font';
+
+// 开关样式
+$time: .5s;
+$cubic: cubic-bezier(.78, .14, .15, .86);
+
+.bee-switch {
+    position: relative;
+    height: $base-height * 0.7;
+    width: $base-height * 1.8;
+    border-radius: $base-height;
+    border: $base-border;
+    background-color: #ccc;
+    -webkit-transition: background-color $time $cubic;
+    transition: background-color $time $cubic;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $base-height * 0.67 ;
+        width: $base-height * 0.67;
+        border-radius: 50%;
+        box-shadow: 0 0 .1rem #333;
+        background-color: #fff;
+        -webkit-transition: transform $time $cubic;
+        transition: transform $time $cubic;
+    }
+    &.bee-active {
+        background-color: #4cae4c;
+    }
+    &.bee-active::before {
+        -webkit-transform: translate3d(1.2rem, 0, 0);
+        transform: translate3d(1.2rem, 0, 0);
+    }
+}

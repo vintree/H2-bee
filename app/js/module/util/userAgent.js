@@ -5,8 +5,8 @@
 const userAgent = function() {}
 
 userAgent.isMobile = function() {
-    mobileArr: ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
-    return this.mobileArr.some(function(v) {
+    var mobileArr = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    return mobileArr.some(function(v) {
         return window.navigator.userAgent.indexOf(v) > 0 ? true : false;
     });
 }

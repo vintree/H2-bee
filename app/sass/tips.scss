@@ -1,0 +1,57 @@
+// 提示信息
+// $tips-ease-back: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+.tips {
+    line-height: $base-height;
+    text-align: center;
+    &.tips-top-group {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-size: $base-size;
+        transform: translateY(- $base-height);
+        .tips-describe {
+            padding: 0 .5rem;
+            @include ellipsis1;
+        }
+    }
+    &.fade {
+        animation: 0.3s tips-top-fade;
+        animation-fill-mode: forwards;
+    }
+    &.fadeIn {
+        animation: 0.5s tips-top-fadeIn;
+        animation-fill-mode: forwards;
+    }
+    &.tips-primary {
+        background-color: $base-primaryColor;
+        color: #fff;
+    }
+    &.tips-success {
+        background-color: $base-successColor;
+        color: #fff;
+    }
+    &.tips-info {
+        background-color: $base-infoColor;
+        color: #fff;
+    }
+    &.tips-warning {
+        background-color: $base-warningColor;
+        color: #fff;
+    }
+    &.tips-danger {
+        background-color: $base-dangerColor;
+        color: #fff;
+    }
+    [role~=cancel] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: .5rem;
+        line-height: $base-height;
+        text-align: center;
+        color: #fff;
+    }
+}
